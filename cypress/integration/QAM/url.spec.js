@@ -29,6 +29,5 @@ describe('Create and mark-unmark as Favourite', function() {
         cy.reload()
         cy.contains('No articles are here... yet.').should('be.visible')
         cy.go('back')
-
     })
 })
