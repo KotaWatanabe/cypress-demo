@@ -1,16 +1,9 @@
-import 'cypress-file-upload';
-
 Cypress.Commands.add('SignIn', () => {
-    cy.visit('/#/login')
-    cy.title().should('eq', 'Conduit')
-    cy.location('protocol').should('eq', ('https:'))
-
+    cy.visit('/login')
     cy.get('form').within(($form) => {
-        cy.get('input[type="email"]').type('test331@gmail.com')
-        cy.get('input[type="password"]').type('testtest')
+        cy.get('input[type="email"]').type('valid@gmail.com')
+        cy.get('input[type="password"]').type('123456')
         cy.root().submit()
     })
-    cy.contains('Your Feed', {
-        timeout: 10000
-    }).should('be.visible')
+    cy.url().should('include', 'dashboard')
 })
