@@ -1,4 +1,4 @@
-describe('register page UI', () => {
+describe.skip('register page UI', () => {
     beforeEach(function () {
         cy.visit('/register')
     })
